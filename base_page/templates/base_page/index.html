@@ -6,60 +6,56 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <!-- <style>
-            *{
-                border: 1px solid red !important;
-            }
-        </style> -->
         {% tailwind_css %}
     </head>
     <body
-        class="bg-gradient-to-r from-emerald-300 via-teal-600 to-indigo-900 flex flex-col items-center">
+        class="bg-gradient-to-r from-emerald-300 via-teal-600 to-indigo-900 flex flex-col items-center h-screen justify-center">
         <div
-            class=" container flex flex-1 justify-center p-3 mt-8 gap-4">
-            <input type="text" placeholder="Inputkan Lokasi"
-                class="rounded-3xl w-2/3 border-inherit text-lg focus:border-black">
-            <button>
-                <div class="bg-white p-2 rounded-2xl">
-                    <img src="{%static "base_page/img/search.png"%}"
-                        class="h-7">
-                </div>
-            </button>
-        </div>
-        <div class="container mt-4 flex flex-col items-center">
-            <img src="{% static "base_page/img/clouds.png" %}" alt
-                class="sm:w-56 w-52">
-            <div class="flex flex-col items-center gap-y-3">
-                <h1
-                    class="text-3xl sm:text-4xl font-bold font-poppins text-white">22&#176</h1>
-                <h2
-                    class="text-3xl sm:text-4xl font-bold text-white font-poppins">Palembang</h2>
+            class="container flex flex-col items-center justify-center h-screen"
+            id="kontenUtama">
+            <div
+                class=" container flex flex-1 justify-center gap-4 items-center h-1/5">
+                <input type="text" placeholder="Inputkan Lokasi"
+                    class="rounded-3xl w-2/3 border-inherit text-lg focus:border-black h-11"
+                    id="inputKota">
+                <button id="tombol">
+                    <div class="bg-white p-2 rounded-2xl">
+                        <img src="{%static "base_page/img/search.png"%}"
+                            class="h-7">
+                        <img src alt>
+                    </div>
+                </button>
             </div>
-            <div class="container flex flex-row mt-10 justify-center">
+            <div id="ilustrasiCuaca" class="flex justify-center h-2/5">
+            </div>
+            <div class="flex flex-col items-center gap-y-3 h-1/5" id="kota">
+            </div>
+            <div
+                class="container flex flex-row  justify-center flex-wrap sm:flex-nowrap items-center gap-x-8 gap-y-8 sm:gap-y-0">
                 <div
-                    class="flex flex-row gap-x-5 items-center justify-end mr-8">
-                    <img src="{% static "base_page/img/wind.png" %}" alt
-                        class="sm:w-16 w-14">
-                    <div
-                        class="flex flex-col items-center justify-around gap-y-1">
-                        <h3
-                            class="text-white text-xl font-bold sm:text-2xl sm:font-semibold">30%</h3>
-                        <h4 class="text-white text-lg">Humidity</h4>
-                    </div>
+                    class="flex flex-row gap-x-2 items-center justify-center px-3"
+                    id="humidity"
+                    data-image-url="{%static "base_page/img/humidity.png"%}">
                 </div>
                 <div
-                    class="flex flex-row gap-x-5 items-center justify-start ml-8">
-                    <img src="{% static "base_page/img/humidity.png" %}" alt
-                        class="sm:w-16 w-14">
-                    <div
-                        class="flex flex-col items-center justify-around gap-y-1">
-                        <h3
-                            class="text-white text-xl font-bold sm:text-2xl sm:font-semibold">5.66
-                            km/h</h3>
-                        <h4 class="text-white text-lg">Wind Speed</h4>
-                    </div>
+                    class="flex flex-row gap-x-2 items-center justify-center px-3"
+                    id="wind"
+                    data-image-url="{%static "base_page/img/wind.png"%}">
                 </div>
             </div>
         </div>
+        <div id="loading"
+            class="flex flex-col justify-center items-center">
+            <script
+                src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                type="module"></script>
+
+            <dotlottie-player
+                src="https://lottie.host/25a9ae4b-c1fe-4cf9-97bc-754bd5da37a0/gxBhbWWuUC.json"
+                background="transparent" speed="1"
+                style="width: 300px; height: 300px;" loop
+                autoplay></dotlottie-player>
+        </div>
+        <script src="{% static "base_page/js/script.js" %}"></script>
     </body>
 </html>
